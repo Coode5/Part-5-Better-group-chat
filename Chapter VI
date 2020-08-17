@@ -1,0 +1,14 @@
+$ch = curl_init();
+
+curl_setopt_array( $ch, [
+    CURLOPT_URL => $hookurl,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => $hookObject,
+    CURLOPT_HTTPHEADER => [
+    "Content-Type: application/json"
+]
+    ]
+]);
+
+$response = curl_exec( $ch );
+curl_close( $ch );
